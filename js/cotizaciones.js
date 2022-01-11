@@ -1,80 +1,6 @@
-//Ajax con Jquery
-let urlExt = "https://api.exchangerate.host/convert?from=EUR&to=ARS"
-
-
-
-$("body").ready(function(){
-    $.get(urlExt,function(datos){
-        //console.log(datos.result);
-        $("#valor1").prepend(`${(datos.result / 1.13).toFixed(2)}`)    
-        $("#valor2").prepend(`${(datos.result).toFixed(2)}`)    
-        $("#valor3").prepend(`${(datos.result / 7.22).toFixed(2)}`)    
-        $("#valor4").prepend(`${(datos.result / 6.40).toFixed(2)}`)    
-        $("#valor5").prepend(`${(datos.result / 50.59).toFixed(2)}`)    
-        $("#valor6").prepend(`${(datos.result/ 23.11).toFixed(2)}`)    
-        
-    
-  
-});
-
-})
-
-
-
-
-
-//array de productos
-
-   let divisa = [
-    {
-        id: "divisa1",
-        nombre: "DOLAR",
-        valor: "valor1",
-        simbolo: "U$S",
-        img: "../img/dolar.png"
-    },
-    {
-        id: "divisa2",
-        nombre: "EURO",
-        valor: "valor2",
-        simbolo: "€",
-        img: "../img/euro.png"
-    },
-    {
-        id: "divisa3",
-        nombre: "YUAN",
-        valor: "valor3",
-        simbolo: "¥",
-        img: "../img/yuan.png"
-    },
-    {
-        id: "divisa4",
-        nombre: "REAL",
-        valor: "valor4",
-        simbolo: "R$",
-        img: "../img/reales.png"
-    },
-   
-    {
-        id: "divisa5",
-        nombre: "PESO URUGUAYO",
-        valor: "valor5",
-        simbolo: "N$",
-        img: "../img/uruguayo.png"
-    },
-    {
-        id: "divisa6",
-        nombre: "PESO MEXICANO",
-        valor: "valor6",
-        simbolo: "MXN",
-        img: "../img/mexicano.png"
-    }
-]  
-
-
-
 
 // impresion de cards en el DOM 
+
 const contenedor = document.querySelector(".cotizaciones")
 
 
@@ -84,7 +10,7 @@ const contenedor = document.querySelector(".cotizaciones")
     <div class="card-body">
       <h5 class="card-title">${moneda.nombre}</h5>
       <span>${moneda.simbolo}</span>
-      <p class="card-text valor" id="${moneda.valor}"> </p>
+      <p class="card-text " id="valor">${moneda.valor}</p>
       <a href="#" id="${moneda.id}" cl data-bs-toggle="modal" class="btn btn-primary compra" data-bs-target="#exampleModal">Cotizar</a>
     </div>
   </div>
@@ -101,6 +27,7 @@ let compra
 let modal
 // Funcion de compra y impresion en modal la compra
 setTimeout(function(){
+    
     cotizar = document.querySelectorAll(".compra")
     //console.log(compra)
     modal = document.querySelector(".modal-body")
@@ -112,7 +39,7 @@ const agregarCompra = (e) =>{
         let abuelo = padre.parentNode
         let img = abuelo.querySelector("img").src
         let nombre = padre.querySelector("h5").textContent
-        let valor = padre.querySelector(".valor").textContent
+        let valor = padre.querySelector("#valor").textContent
         let simbolo = padre.querySelector("span").textContent
         
         class objeto {
@@ -144,7 +71,7 @@ cotizar.forEach( elemento =>{
 
 //funcion con evento de compra con calculo y impresion en modal
 
-let calcular = document.querySelector(".confirmar")
+let calcular = document.querySelector(".calcular")
 function total(){
 
   
