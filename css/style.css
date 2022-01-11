@@ -1,0 +1,178 @@
+body{
+
+    background-image: url(../img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: center;
+}
+
+#anim{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    margin-top: 100px;
+    
+}
+
+.cotizaciones{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 100px 100px;
+    grid-template-areas: "divisa1 divisa2 divisa3"
+                         "divisa4 divisa5 divisa6";
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 350px;
+    margin-top: 200px;
+}
+#imgDivisa{
+    display: grid;
+    justify-self: center;
+    align-self: center;
+}
+#valorM{
+    text-align: left;
+}
+#etiquetaM{
+    text-align: left;
+    color: grey;
+    font-size: 18px;
+}
+#cantidad{
+    text-align: left;
+}
+#impPais{
+    
+    margin-left: 20px;
+    text-align: left;
+    font-size: 12px;
+    
+}
+#impGan{
+    margin-left: 20px;
+    text-align: left;
+    font-size: 12px;
+}
+#total{
+    border-top: solid 1px gray;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: left;
+}
+#alerta{
+    text-align: center;
+    color: red;
+    font-size: 18px;
+}
+
+#divisa1{
+    grid-area: divisa1;
+    
+}
+#divisa2{
+    grid-area: divisa2;
+}
+#divisa3{
+    grid-area: divisa3;
+    
+}
+#divisa4{
+    grid-area: divisa4;
+}
+#divisa5{
+    grid-area: divisa5;
+}
+#divisa6{
+    grid-area: divisa6;
+}
+.card{
+    text-align: center;
+}
+
+
+#form{
+  
+    background-color:  black;
+    font-size: 15px;
+    width: 800px;
+    height: 800px;
+    padding-top: 20px;
+    margin-left: 200px;
+    display: grid;
+    color: grey;
+    justify-content: space-evenly;
+    text-align: center;
+    grid-template-areas: 
+                         "nombre email"
+                         "pais ciudad"
+                         "consulta consulta"
+                         "btnSubmit btnLimpiar"
+                         "btnConsultas btnConsultas"
+                         "consultasYaRealizadas consultasYaRealizadas"
+                         ;
+    margin-top: 100px;
+    row-gap: 30px;
+    column-gap: 30px;
+}
+h3{
+    grid-area: h3;
+    text-align: center;
+    color: white;
+    
+    
+}
+#nombre{
+grid-area: nombre;
+text-align: center;
+background-color: white;
+border: solid 2px white;
+}
+#email{
+    grid-area: email;
+    text-align: center;
+    background-color: white;
+    border: solid 2px white;
+}
+#pais{
+    grid-area: pais;
+    text-align: center;
+    border: solid 2px white;
+}
+#ciudad{
+    grid-area: ciudad;
+    text-align: center;
+    border: solid 2px white;
+    
+}
+#consulta{
+    grid-area: consulta;
+    text-align: center;
+    background-color: white;
+    border: solid 2px white;
+}
+#btnSubmit{
+    grid-area: btnSubmit;
+    background-color: rgb(0, 119, 255);
+    border: solid 2px rgb(0, 119, 255);
+    color: white;
+}
+#btnLimpiar{
+    grid-area: btnLimpiar;
+    background-color: rgb(0, 119, 255);
+    border: solid 2px rgb(0, 119, 255);
+    color: white;
+}
+#btnConsultas{
+    grid-area: btnConsultas;
+    background-color: rgb(0, 119, 255);
+    border: solid 2px rgb(0, 119, 255);
+    color: white;
+}
+#consultasYaRealizadas{
+    
+    grid-area: consultasYaRealizadas;
+    text-align: center;
+    color: white;
+    
+}
