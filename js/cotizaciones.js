@@ -124,7 +124,7 @@ cerrar.forEach(element => {
 
 
 
-},200)
+},100)
 
 
 

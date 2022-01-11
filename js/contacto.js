@@ -1,3 +1,5 @@
+//Aca utilice todo en Jquery
+
 
 // le quito la parte para que no refresque 
 
