@@ -1,4 +1,7 @@
 
+
+
+setTimeout(function(){
 // impresion de cards en el DOM 
 
 const contenedor = document.querySelector(".cotizaciones")
@@ -11,7 +14,7 @@ const contenedor = document.querySelector(".cotizaciones")
       <h5 class="card-title">${moneda.nombre}</h5>
       <span>${moneda.simbolo}</span>
       <p class="card-text " id="valor">${moneda.valor}</p>
-      <a href="#" id="${moneda.id}" cl data-bs-toggle="modal" class="btn btn-primary compra" data-bs-target="#exampleModal">Cotizar</a>
+      <a href="#" id="${moneda.id}" cl data-bs-toggle="modal" class="btn btn-primary cotizar" data-bs-target="#exampleModal">Cotizar</a>
     </div>
   </div>
      `
@@ -23,12 +26,12 @@ const contenedor = document.querySelector(".cotizaciones")
 let calculadora = []
 
 // Funcion de compra y impresion en modal la compra
-let compra
+let cotizar
 let modal
 // Funcion de compra y impresion en modal la compra
-setTimeout(function(){
+
     
-    cotizar = document.querySelectorAll(".compra")
+    cotizar = document.querySelectorAll(".cotizar")
     //console.log(compra)
     modal = document.querySelector(".modal-body")
     //console.log(modal)
@@ -66,7 +69,7 @@ const agregarCompra = (e) =>{
 cotizar.forEach( elemento =>{
     elemento.addEventListener("click", agregarCompra)
 })  
-},100);
+;
 
 
 //funcion con evento de compra con calculo y impresion en modal
@@ -90,9 +93,9 @@ function total(){
      
    let calculo = document.querySelector("#calculo")
    calculo.innerHTML = `  <p id="impPais">% Impuesto Pais $ ${(parseInt(valorM.innerText) * parseInt(cantidad.value) * impuestoPais - (parseInt(valorM.innerText) * parseInt(cantidad.value) )).toFixed(2) }</p>
-   <p id="impGan">% Impuesto a las Ganancias $ ${(parseInt(valorM.innerText) * parseInt(cantidad.value) * impuestoGanancias - (parseInt(valorM.innerText) * parseInt(cantidad.value) )).toFixed(2) }</p>
-   <p id="total">Su cotizacion es: ARS$ ${suma.toFixed(2)} </p>
-   `
+                          <p id="impGan">% Impuesto a las Ganancias $ ${(parseInt(valorM.innerText) * parseInt(cantidad.value) * impuestoGanancias - (parseInt(valorM.innerText) * parseInt(cantidad.value) )).toFixed(2) }</p>
+                          <p id="total">Su cotizacion es: ARS$ ${suma.toFixed(2)} </p>
+                            `
    //condicional para que deje solo 2 decimales y si te pasas de un maximo de 200 dolares te tira leyenda
    if(suma.toFixed(2) > 36855){
     calculo.innerHTML = `<p id="alerta">Excediste el minimo, la AFIP esta yendo en camino!!</p>`
@@ -107,8 +110,21 @@ function total(){
 
 calcular.addEventListener("click", total)
 
+//botones cerrar modal para eliminar contenido
+
+let cerrar = document.querySelectorAll(".cerrar")
+
+function borrar(){
+    let calculo = document.querySelector("#calculo")
+    calculo.innerHTML =``
+} 
+cerrar.forEach(element => {
+    element.addEventListener("click",borrar)
+});
 
 
+
+},200)
 
 
 
